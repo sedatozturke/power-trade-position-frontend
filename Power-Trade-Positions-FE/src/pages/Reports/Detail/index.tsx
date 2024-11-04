@@ -76,7 +76,7 @@ const ReportDetail = () => {
             <Table.Header>Volume</Table.Header>
           </Table.Head>
           <Table.Body>
-            {reportDetail ? reportDetail.powerVolumes.map((powerVolumes) => (
+            {reportDetail && reportDetail.powerVolumes?.length > 0 ? reportDetail.powerVolumes.map((powerVolumes) => (
               <Table.Row key={powerVolumes.periodTime.toString()}>
                 <Table.Cell classNameExtension={`${isSingle ? 'w-4/5' : ''}`}>{new Date(powerVolumes.periodTime).toISOString()}</Table.Cell>
                 <Table.Cell>{powerVolumes.volume}</Table.Cell>

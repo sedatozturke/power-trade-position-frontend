@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
-import { useGetReportsQuery, useLazyGetReportsQuery } from '../../services/reports/api'
+import { useLazyGetReportsQuery } from '../../services/reports/api'
 import Table from '../../components/Table';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,7 +47,7 @@ const ReportsList = () => {
           <Table.Header>Extraction Date(UTC)</Table.Header>
         </Table.Head>
         <Table.Body>
-          {data ? data.map((report) => (
+          {data && data.length > 0 ? data.map((report) => (
             <Table.Row key={report.id} onRowSelected={() => navigate(`/reports/${report.id}`)}>
               <Table.Cell>{report.id}</Table.Cell>
               <Table.Cell>{report.name}</Table.Cell>

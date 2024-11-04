@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Layout from '../../components/Layout'
 
 export default function Welcome() {
@@ -20,8 +19,6 @@ export default function Welcome() {
         </h3>
         <h3 className="text-l text-gray-500">
           Run PowerTradePosition.API to serve the reports. This app expects API on: 'http://localhost:5045'
-        </h3>
-        <h3 className="text-l text-gray-500">
         </h3>
       </div>
     </Layout>

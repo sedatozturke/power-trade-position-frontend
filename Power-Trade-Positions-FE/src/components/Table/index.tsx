@@ -5,6 +5,10 @@ interface TableProps {
   classNameExtension?: string
 }
 
+interface RowProps extends TableProps {
+  onRowSelected?: () => void
+}
+
 const Table = ({ children }: TableProps) => {
   return (
     <div className="overflow-x-auto overflow-y-auto">
@@ -26,10 +30,6 @@ const Head = ({ children }: TableProps) => {
 const Body = ({ children }: TableProps) => {
   return <tbody>{children}</tbody>;
 };
-
-interface RowProps extends TableProps {
-  onRowSelected?: () => void
-}
 
 const Row = ({ children, onRowSelected }: RowProps) => {
   return <tr onClick={onRowSelected} className={`hover:bg-gray-50 border-b border-gray-200 ${onRowSelected ? 'cursor-pointer' : ''}`}>{children}</tr>;
